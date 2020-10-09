@@ -25,16 +25,29 @@ public class Aluno {
 		
 	}
 	
-	public Aluno(String nomePadrao) {
-		nome =nomePadrao;
+	public Aluno(String nome, int idade, String dataNascimento, String registroGeral, String numeroCpf, String nomeMae,
+			String nomePai, String dataMatricula, String nomeEscola, String serieMatriculado, double nota1,
+			double nota2, double nota3, double nota4) {
+		super();
+		this.nome = nome;
+		this.idade = idade;
+		this.dataNascimento = dataNascimento;
+		this.registroGeral = registroGeral;
+		this.numeroCpf = numeroCpf;
+		this.nomeMae = nomeMae;
+		this.nomePai = nomePai;
+		this.dataMatricula = dataMatricula;
+		this.nomeEscola = nomeEscola;
+		this.serieMatriculado = serieMatriculado;
+		this.nota1 = nota1;
+		this.nota2 = nota2;
+		this.nota3 = nota3;
+		this.nota4 = nota4;
 	}
-	
-	public Aluno(String nomePadrao, int idadePadrao) {
-		nome = nomePadrao;
-		idade = idadePadrao;
-	}
-	
-	
+
+
+
+
 	/*SET e para adicionar ou receber dados para o atributos*/
 	/*GET e para resgatar ou obter o valor do atributo*/
 
@@ -163,4 +176,17 @@ public class Aluno {
 			return false;
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
+				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+				+ serieMatriculado + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3=" + nota3 + ", nota4=" + nota4
+				+ "]";
+	}
+
+	
+	
+	
 }
