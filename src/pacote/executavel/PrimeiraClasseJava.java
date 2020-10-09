@@ -14,25 +14,37 @@ public class PrimeiraClasseJava {
 		/* aluno1 é uma referência para objeto aluno*/
 		
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno? ");
-		
+		String idade = JOptionPane.showInputDialog("Qual é a idade? ");
+		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento? ");
+		String rg = JOptionPane.showInputDialog("Registro Geral? ");
+		String cpf = JOptionPane.showInputDialog("Qual número do CPF? ");
+		String mae = JOptionPane.showInputDialog("Nome da mãe? ");
+		String pai = JOptionPane.showInputDialog("Nome do pai? ");
+		String matricula = JOptionPane.showInputDialog("Qual número da matrícula? ");
+		String serie = JOptionPane.showInputDialog("Qual é a série? ");
+		String escola = JOptionPane.showInputDialog("nome da escola? ");
+		String nota1 = JOptionPane.showInputDialog("Insira a nota 1 ");
+		String nota2 = JOptionPane.showInputDialog("Insira a nota 2 ");
+		String nota3 = JOptionPane.showInputDialog("insira a nota 3 ");
+		String nota4 = JOptionPane.showInputDialog("Insira a nota 4 ");
 		
 		Aluno aluno1 = new Aluno();
 		
 		aluno1.setNome(nome);
-		aluno1.setIdade(33);
-		aluno1.setDataNascimento("10/09/1987");
-		aluno1.setRegistroGeral("003.899.456-9");
-		aluno1.setNumeroCpf("124.670.567-90");
-		aluno1.setNomeMae("Shirlei");
-		aluno1.setNomePai("Antonio");
-		aluno1.setSerieMatriculado("10/09/2000");
-		aluno1.setSerieMatriculado("5º");
-		aluno1.setNomeEscola("Escola JDEV treinamento");
+		aluno1.setIdade(Integer.valueOf(idade));
+		aluno1.setDataNascimento(dataNascimento);
+		aluno1.setRegistroGeral(rg);
+		aluno1.setNumeroCpf(cpf);
+		aluno1.setNomeMae(mae);
+		aluno1.setNomePai(pai);
+		aluno1.setSerieMatriculado(matricula);
+		aluno1.setSerieMatriculado(serie);
+		aluno1.setNomeEscola(escola);
 		
-		aluno1.setNota1(90);
-		aluno1.setNota2(80.8);
-		aluno1.setNota3(79.9);
-		aluno1.setNota4(90.7);
+		aluno1.setNota1(Double.parseDouble(nota1));
+		aluno1.setNota2(Double.parseDouble(nota2));
+		aluno1.setNota3(Double.parseDouble(nota3));
+		aluno1.setNota4(Double.parseDouble(nota4));
 		
 		System.out.println("Nome é = " + aluno1.getNome());
 		System.out.println("Idade é = " + aluno1.getIdade());
