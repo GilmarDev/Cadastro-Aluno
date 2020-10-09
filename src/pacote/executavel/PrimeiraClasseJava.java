@@ -1,5 +1,7 @@
 package pacote.executavel;
 
+import javax.swing.JOptionPane;
+
 import cursojava.classes.Aluno;
 
 public class PrimeiraClasseJava {
@@ -10,9 +12,13 @@ public class PrimeiraClasseJava {
 		
 		/* new Aluno() é uma instância (Criação do objeto)*/
 		/* aluno1 é uma referência para objeto aluno*/
+		
+		String nome = JOptionPane.showInputDialog("Qual o nome do aluno? ");
+		
+		
 		Aluno aluno1 = new Aluno();
 		
-		aluno1.setNome("João da Silva");
+		aluno1.setNome(nome);
 		aluno1.setIdade(33);
 		aluno1.setDataNascimento("10/09/1987");
 		aluno1.setRegistroGeral("003.899.456-9");
