@@ -28,6 +28,10 @@ public class Aluno {
 		return disciplina;
 	}
 	
+	public Aluno() {
+		
+	}
+	
 	/*SET e para adicionar ou receber dados para o atributos*/
 	/*GET e para resgatar ou obter o valor do atributo*/
 
@@ -114,7 +118,13 @@ public class Aluno {
 	
 	/*método retorna a média do aluno*/
 	public double getMediaNota() {
-	return 0;
+		
+		double somaNotas = 0.0;
+	
+		for(Disciplina disciplina : disciplina) {
+			somaNotas += disciplina.getNota();
+		}
+	return somaNotas / disciplina.size();
 	}
 	
 	public boolean getAlunoAprovado() {

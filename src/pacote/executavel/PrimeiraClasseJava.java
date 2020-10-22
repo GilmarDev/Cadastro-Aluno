@@ -3,6 +3,7 @@ package pacote.executavel;
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
+import cursojava.classes.Disciplina;
 
 public class PrimeiraClasseJava {
 	
@@ -21,17 +22,6 @@ public class PrimeiraClasseJava {
 		String serie = JOptionPane.showInputDialog("Qual é a série? ");
 		String escola = JOptionPane.showInputDialog("nome da escola? ");
 		
-		String disciplina1 = JOptionPane.showInputDialog("Disciplina 1? ");
-		String nota1 = JOptionPane.showInputDialog("Insira a nota 1 ");
-		
-		String disciplina2 = JOptionPane.showInputDialog("Disciplina 2? ");
-		String nota2 = JOptionPane.showInputDialog("Insira a nota 2 ");
-		
-		String disciplina3 = JOptionPane.showInputDialog("Disciplina 3? ");
-		String nota3 = JOptionPane.showInputDialog("insira a nota 3 ");
-		
-		String disciplina4 = JOptionPane.showInputDialog("Disciplina 4? ");
-		String nota4 = JOptionPane.showInputDialog("Insira a nota 4 ");
 		
 		/* new Aluno() é uma instância (Criação do objeto)*/
 		/* aluno é uma referência para objeto aluno*/
@@ -49,23 +39,34 @@ public class PrimeiraClasseJava {
 		aluno.setSerieMatriculado(serie);
 		aluno.setNomeEscola(escola);
 		
+		Disciplina disciplina5 = new Disciplina();
+		disciplina5.setDisciplina("Banco de dados ");
+		disciplina5.setNota(90);
+		
+		
+		Disciplina disciplina6 = new Disciplina();
+		disciplina6.setDisciplina("Matemática");
+		disciplina6.setNota(80);
+		
+		
+		Disciplina disciplina7 = new Disciplina();
+		disciplina7.setDisciplina("Geografia");
+		disciplina7.setNota(97);
+		
+		
+		Disciplina disciplina8 = new Disciplina();
+		disciplina8.setDisciplina("Java Web");
+		disciplina8.setNota(70);
+		
+		aluno.getDisciplina().add(disciplina5);
+		aluno.getDisciplina().add(disciplina6);
+		aluno.getDisciplina().add(disciplina7);
+		aluno.getDisciplina().add(disciplina8);
+		
 		
 		System.out.println(aluno.toString());/*Descrição do objeto na memória*/
 		System.out.println("Média do aluno = " + aluno.getMediaNota());
 		System.out.println("Resultado = " + aluno.getAlunoAprovado());
 		
-		Aluno aluno1 = new Aluno();
-		aluno1.setNome("Alex");
-		aluno1.setNumeroCpf("123");
-		
-		Aluno aluno2 = new Aluno();
-		aluno2.setNome("Alex");
-		aluno2.setNumeroCpf("1234");
-		
-		if(aluno1.equals(aluno2)) {
-			System.out.println("Alunos são iguais ");
-		}else {
-			System.out.println("Alunos não iguais ");
-		}
 	}
 }
