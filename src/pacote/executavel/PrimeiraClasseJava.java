@@ -39,29 +39,18 @@ public class PrimeiraClasseJava {
 		aluno.setSerieMatriculado(serie);
 		aluno.setNomeEscola(escola);
 		
-		Disciplina disciplina5 = new Disciplina();
-		disciplina5.setDisciplina("Banco de dados ");
-		disciplina5.setNota(90);
+		for(int pos = 1; pos <= 4; pos++) {
+			String nomeDisciplina =JOptionPane.showInputDialog("Nome da disciplina "+pos+" ?");
+			String notaDisciplina =JOptionPane.showInputDialog("Nota da disciplina "+pos+" ?");
+			
+			Disciplina disciplina = new Disciplina();
+			disciplina.setDisciplina(nomeDisciplina);
+			disciplina.setNota(Double.valueOf(notaDisciplina));;
+			
 		
+			aluno.getDisciplina().add(disciplina);
+		}
 		
-		Disciplina disciplina6 = new Disciplina();
-		disciplina6.setDisciplina("Matemática");
-		disciplina6.setNota(80);
-		
-		
-		Disciplina disciplina7 = new Disciplina();
-		disciplina7.setDisciplina("Geografia");
-		disciplina7.setNota(97);
-		
-		
-		Disciplina disciplina8 = new Disciplina();
-		disciplina8.setDisciplina("Java Web");
-		disciplina8.setNota(70);
-		
-		aluno.getDisciplina().add(disciplina5);
-		aluno.getDisciplina().add(disciplina6);
-		aluno.getDisciplina().add(disciplina7);
-		aluno.getDisciplina().add(disciplina8);
 		
 		
 		System.out.println(aluno.toString());/*Descrição do objeto na memória*/
