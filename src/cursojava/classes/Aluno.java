@@ -15,8 +15,8 @@ public class Aluno {
 	private String nomeMae;
 	private String nomePai;
 	private String dataMatricula;
-	private String nomeEscola;
-	private String serieMatriculado;
+	private String serieMatriculada;
+	private String escola;
 	
 	List<Disciplina> disciplina = new ArrayList<Disciplina>();
 	
@@ -100,19 +100,19 @@ public class Aluno {
 	}
 
 	public String getNomeEscola() {
-		return nomeEscola;
+		return serieMatriculada;
 	}
 
 	public void setNomeEscola(String nomeEscola) {
-		this.nomeEscola = nomeEscola;
+		this.serieMatriculada = nomeEscola;
 	}
 
 	public String getSerieMatriculado() {
-		return serieMatriculado;
+		return escola;
 	}
 
 	public void setSerieMatriculado(String serieMatriculado) {
-		this.serieMatriculado = serieMatriculado;
+		this.escola = serieMatriculado;
 	}
 
 	
@@ -142,8 +142,8 @@ public class Aluno {
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
-				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + "]";
+				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + serieMatriculada + ", serieMatriculado="
+				+ escola + "]";
 	}
 
 	@Override

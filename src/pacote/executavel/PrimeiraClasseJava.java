@@ -6,11 +6,10 @@ import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 
 public class PrimeiraClasseJava {
-	
-	/*main é um método em Java auto executável*/
+
+	/* main é um método em Java auto executável */
 	public static void main(String[] args) {
-		
-		
+
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno? ");
 		String idade = JOptionPane.showInputDialog("Qual é a idade? ");
 		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento? ");
@@ -18,16 +17,15 @@ public class PrimeiraClasseJava {
 		String cpf = JOptionPane.showInputDialog("Qual número do CPF? ");
 		String mae = JOptionPane.showInputDialog("Nome da mãe? ");
 		String pai = JOptionPane.showInputDialog("Nome do pai? ");
-		String matricula = JOptionPane.showInputDialog("Qual número da matrícula? ");
+		String matricula = JOptionPane.showInputDialog("Qual data da matrícula? ");
 		String serie = JOptionPane.showInputDialog("Qual é a série? ");
 		String escola = JOptionPane.showInputDialog("nome da escola? ");
-		
-		
-		/* new Aluno() é uma instância (Criação do objeto)*/
-		/* aluno é uma referência para objeto aluno*/
-		
+
+		/* new Aluno() é uma instância (Criação do objeto) */
+		/* aluno é uma referência para objeto aluno */
+
 		Aluno aluno = new Aluno();
-		
+
 		aluno.setNome(nome);
 		aluno.setIdade(Integer.valueOf(idade));
 		aluno.setDataNascimento(dataNascimento);
@@ -35,27 +33,32 @@ public class PrimeiraClasseJava {
 		aluno.setNumeroCpf(cpf);
 		aluno.setNomeMae(mae);
 		aluno.setNomePai(pai);
-		aluno.setSerieMatriculado(matricula);
+		aluno.setDataMatricula(matricula);
 		aluno.setSerieMatriculado(serie);
 		aluno.setNomeEscola(escola);
-		
-		for(int pos = 1; pos <= 4; pos++) {
-			String nomeDisciplina =JOptionPane.showInputDialog("Nome da disciplina "+pos+" ?");
-			String notaDisciplina =JOptionPane.showInputDialog("Nota da disciplina "+pos+" ?");
-			
+
+		for (int pos = 1; pos <= 4; pos++) {
+			String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina " + pos + " ?");
+			String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina " + pos + " ?");
+
 			Disciplina disciplina = new Disciplina();
 			disciplina.setDisciplina(nomeDisciplina);
-			disciplina.setNota(Double.valueOf(notaDisciplina));;
+			disciplina.setNota(Double.valueOf(notaDisciplina));
 			
-		
+
 			aluno.getDisciplina().add(disciplina);
 		}
+
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina ?");
 		
-		
-		
-		System.out.println(aluno.toString());/*Descrição do objeto na memória*/
+		if(escolha == 0) {
+			String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina 1, 2, 3, ou 4 ?");
+			aluno.getDisciplina().remove(Integer.valueOf(disciplinaRemover).intValue() - 1);
+		}
+
+		System.out.println(aluno.toString());/* Descrição do objeto na memória */
 		System.out.println("Média do aluno = " + aluno.getMediaNota());
 		System.out.println("Resultado = " + aluno.getAlunoAprovado());
-		
+
 	}
 }
