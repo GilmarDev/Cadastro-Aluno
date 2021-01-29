@@ -15,6 +15,12 @@ public class PrimeiraClasseJava {
 	/* main é um método em Java auto executável */
 	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
+		
+		String login = JOptionPane.showInputDialog("Informe o login");
+		String senha = JOptionPane.showInputDialog("Informe a senha");
+		
+		if(login.equalsIgnoreCase("admin") &&
+				senha.equalsIgnoreCase("admin")) {
 
 		List<Aluno> alunos = new ArrayList<Aluno>();
 
@@ -112,6 +118,7 @@ public class PrimeiraClasseJava {
 					+ " a média foi : " + aluno.getMediaNota());
 
 		}
-
+		
+		}
 	}
 }
