@@ -6,16 +6,10 @@ import java.util.List;
 import cursojava.constantes.StatusAluno;
 
 /*Esta é a classe/objeto que representa Aluno*/
-public class Aluno {
+public class Aluno extends Pessoa {
 
 	/* Esses são os atributos do aluno */
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCpf;
-	private String nomeMae;
-	private String nomePai;
+
 	private String dataMatricula;
 	private String serieMatriculada;
 	private String escola;
@@ -32,6 +26,15 @@ public class Aluno {
 
 	public Aluno() {
 
+	}
+
+	public Aluno(String nomePadrao) {
+		nome = nomePadrao;
+	}
+
+	public Aluno(String nomePadrao, int idadePadrao) {
+		nome = nomePadrao;
+		idade = idadePadrao;
 	}
 
 	/* SET e para adicionar ou receber dados para o atributos */
@@ -137,7 +140,7 @@ public class Aluno {
 				return StatusAluno.RECUPERACAO;
 			}
 		} else {
-				return StatusAluno.REPROVADO;
+			return StatusAluno.REPROVADO;
 		}
 	}
 
