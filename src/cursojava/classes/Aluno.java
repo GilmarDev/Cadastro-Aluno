@@ -3,37 +3,42 @@ package cursojava.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import cursojava.constantes.StatusAluno;
+
 /*Esta é a classe/objeto que representa Aluno*/
-public class Aluno {
-	
-	/* Esses são os atributos do aluno*/
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCpf;
-	private String nomeMae;
-	private String nomePai;
+public class Aluno extends Pessoa {
+
+	/* Esses são os atributos do aluno */
+
 	private String dataMatricula;
 	private String serieMatriculada;
 	private String escola;
-	
+
 	List<Disciplina> disciplina = new ArrayList<Disciplina>();
-	
+
 	public void setDisciplina(List<Disciplina> disciplina) {
 		this.disciplina = disciplina;
 	}
-	
+
 	public List<Disciplina> getDisciplina() {
 		return disciplina;
 	}
-	
+
 	public Aluno() {
-		
+
 	}
-	
-	/*SET e para adicionar ou receber dados para o atributos*/
-	/*GET e para resgatar ou obter o valor do atributo*/
+
+	public Aluno(String nomePadrao) {
+		nome = nomePadrao;
+	}
+
+	public Aluno(String nomePadrao, int idadePadrao) {
+		nome = nomePadrao;
+		idade = idadePadrao;
+	}
+
+	/* SET e para adicionar ou receber dados para o atributos */
+	/* GET e para resgatar ou obter o valor do atributo */
 
 	public String getNome() {
 		return nome;
@@ -115,29 +120,30 @@ public class Aluno {
 		this.escola = serieMatriculado;
 	}
 
-	
-	/*método retorna a média do aluno*/
+	/* método retorna a média do aluno */
 	public double getMediaNota() {
-		
+
 		double somaNotas = 0.0;
-	
-		for(Disciplina disciplina : disciplina) {
+
+		for (Disciplina disciplina : disciplina) {
 			somaNotas += disciplina.getNota();
 		}
-	return somaNotas / disciplina.size();
+		return somaNotas / disciplina.size();
 	}
-	
-	public boolean getAlunoAprovado() {
+
+	public String getAlunoAprovado() {
 		double media = this.getMediaNota();
-		if(media >= 70 ) {
-			return true;
-		}else {
-			return false;
+		if (media >= 50) {
+			if (media >= 70) {
+				return StatusAluno.APROVADO;
+			} else {
+				return StatusAluno.RECUPERACAO;
+			}
+		} else {
+			return StatusAluno.REPROVADO;
 		}
-	
 	}
-	
-	
+
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
@@ -175,6 +181,20 @@ public class Aluno {
 		} else if (!numeroCpf.equals(other.numeroCpf))
 			return false;
 		return true;
-	}	
-	
+	}
+
+	@Override /* Indentificar método sobreescrito */
+	public boolean pesssoaMaiorIdade() {
+		return idade >= 21;
+	}
+
+	public String msgMaiorIdade() {
+		return this.pesssoaMaiorIdade() ? "Obaaa vc e maior de idade" : "Ixiii vc e menor de idade";
+	}
+
+	@Override
+	public double salario() {
+		return 1590.00;
+	}
+
 }
