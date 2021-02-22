@@ -134,10 +134,9 @@ public class PrimeiraClasseJava {
 				JOptionPane.showMessageDialog(null, "Acesso não permitido ");
 			}
 
-		} catch (NumberFormatException e) {
-
+		} catch (Exception e) {
 			StringBuilder saida = new StringBuilder();
-
+			
 			/* Imprimir erro no console Java */
 			e.printStackTrace();
 
@@ -154,24 +153,16 @@ public class PrimeiraClasseJava {
 
 			JOptionPane.showMessageDialog(null, "Erro conversão de número " + saida.toString());
 			
-		}catch (NullPointerException e) {
-			JOptionPane.showMessageDialog(null, "Opaa! um null pointer exeption : " + e.getClass());
-		}catch (Exception e) {
-			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Erro inesperado " + e.getClass().getName());
 		}finally {/*Sempre e executado ocorrendo erros ou não*/
 			JOptionPane.showMessageDialog(null, "Obrigado por aprender Java comigo ");
 		}
 	}
 	
-	public static void lerArquivo() throws ExcecaoProcessarNota {
+	public static void lerArquivo() throws FileNotFoundException {
 		
-		try {
 		File file = new File(" arquivo.txt");
 		Scanner scanner = new Scanner(file);
-		}catch (FileNotFoundException e) {
-			throw new ExcecaoProcessarNota(e.getMessage());
-		}
+		
 	}
 
 }
