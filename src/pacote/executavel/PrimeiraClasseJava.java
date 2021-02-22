@@ -1,6 +1,7 @@
 package pacote.executavel;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 import classesauxiliares.FuncaoAutentificacao;
+import curso.java.excecao.ExcecaoProcessarNota;
 import cursojava.classes.Aluno;
 import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
@@ -19,12 +21,12 @@ public class PrimeiraClasseJava {
 	/* main é um método em Java auto executável */
 	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
-
+		
+		
 		try {
-
-			File file = new File("arquivo.txt");
-			Scanner scanner = new Scanner(file);
-
+			
+			lerArquivo();
+			
 			String login = JOptionPane.showInputDialog("Informe o login");
 			String senha = JOptionPane.showInputDialog("Informe a senha");
 
@@ -159,6 +161,16 @@ public class PrimeiraClasseJava {
 			JOptionPane.showMessageDialog(null, "Erro inesperado " + e.getClass().getName());
 		}finally {/*Sempre e executado ocorrendo erros ou não*/
 			JOptionPane.showMessageDialog(null, "Obrigado por aprender Java comigo ");
+		}
+	}
+	
+	public static void lerArquivo() throws ExcecaoProcessarNota {
+		
+		try {
+		File file = new File(" arquivo.txt");
+		Scanner scanner = new Scanner(file);
+		}catch (FileNotFoundException e) {
+			throw new ExcecaoProcessarNota(e.getMessage());
 		}
 	}
 
